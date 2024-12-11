@@ -1,0 +1,60 @@
+/* Styling for the Scrollable Product Section */
+.product-scroll {
+    position: relative;
+    display: flex;
+    gap: 15px;
+}
+
+.product-scroll::before,
+.product-scroll::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.product-scroll::before {
+    left: 0;
+}
+
+.product-scroll::after {
+    right: 0;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-description {
+    margin: 10px 0;
+}
+
+/* Styling for New Arrivals Section */
+.new-arrivals {
+    background-color: #f9f9f9;
+}
+
+.new-arrivals .product-card {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}

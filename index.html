@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Top Header -->
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <div class="logo">
+                    <h2 class="text-center">Logo</h2>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="#" class="nav-link text-white">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white">Shop</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white">Contact</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white">About</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Search Bar and Cart Button -->
+                <div class="d-flex">
+                    <input type="text" class="form-control me-2" placeholder="Search">
+                    <button class="btn btn-light ms-2" id="cart-btn">Cart</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scrollable Product Section -->
+    <section class="scroll-section my-5">
+        <div class="container">
+            <h3>Featured Products</h3>
+            <div class="d-flex overflow-auto product-scroll">
+                <!-- Product Card 1 -->
+                <div class="product-card me-3">
+                    <img src="https://via.placeholder.com/150" alt="Product 1" class="img-fluid">
+                    <p class="product-description">Product 1 description</p>
+                    <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="product-card me-3">
+                    <img src="https://via.placeholder.com/150" alt="Product 2" class="img-fluid">
+                    <p class="product-description">Product 2 description</p>
+                    <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals py-5 bg-light">
+        <div class="container">
+            <h3>New Arrivals</h3>
+            <div class="row">
+                <!-- Product Card 1 -->
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="New Product 1" class="img-fluid">
+                        <p class="product-description">New Product 1 description</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="New Product 2" class="img-fluid">
+                        <p class="product-description">New Product 2 description</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
