@@ -1,41 +1,56 @@
-/* Styling for the Scrollable Product Section */
-.product-scroll {
+/* General body and font styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for the Top Header */
+header {
     position: relative;
-    display: flex;
-    gap: 15px;
+    background-color: #333;
+    color: white;
 }
 
-.product-scroll::before,
-.product-scroll::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.product-scroll::before {
-    left: 0;
-}
-
-.product-scroll::after {
-    right: 0;
-}
-
-/* Product Card Styling */
-.product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
+header .logo h2 {
+    font-size: 2rem;
+    margin: 0;
     text-align: center;
+}
+
+nav .nav-item a {
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+nav .nav-item a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Search Bar and Cart Button */
+input.form-control {
     width: 200px;
+}
+
+#cart-btn {
+    padding: 10px;
+}
+
+/* Scrollable Product Section */
+.product-scroll {
+    display: flex;
+    overflow-x: scroll;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 200px;
+    text-align: center;
 }
 
 .product-card img {
@@ -44,12 +59,14 @@
 }
 
 .product-description {
-    margin: 10px 0;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
 }
 
-/* Styling for New Arrivals Section */
+/* New Arrivals Section */
 .new-arrivals {
-    background-color: #f9f9f9;
+    background-color: #f0f0f0;
 }
 
 .new-arrivals .product-card {
@@ -57,4 +74,29 @@
     padding: 15px;
     border: 1px solid #ddd;
     margin-bottom: 20px;
+}
+
+.new-arrivals .product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.new-arrivals .product-description {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .new-arrivals .col-md-3 {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+}
+
+@media (max-width: 576px) {
+    .new-arrivals .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
