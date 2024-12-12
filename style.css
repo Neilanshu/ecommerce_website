@@ -1,102 +1,259 @@
-/* General body and font styling */
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-}
-
-/* Styling for the Top Header */
-header {
-    position: relative;
-    background-color: #333;
-    color: white;
-}
-
-header .logo h2 {
-    font-size: 2rem;
+    font-family: 'Helvetica', sans-serif;
     margin: 0;
-    text-align: center;
+    padding: 0;
+    background-color: #f9f9f9;
+    font-weight: 400;
 }
 
-nav .nav-item a {
-    color: white;
+/* Header Styling */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    font-size: 1.1rem;
-    text-decoration: none;
 }
 
-nav .nav-item a:hover {
-    background-color: #555;
+.logo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-image {
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007aff;
+}
+
+.navbar-nav .nav-link:focus {
+    outline: 2px solid #007aff;
     border-radius: 5px;
 }
 
-/* Search Bar and Cart Button */
-input.form-control {
-    width: 200px;
+/* Search Bar and Cart */
+.form-control {
+    border-radius: 20px;
+    padding: 8px;
 }
 
-#cart-btn {
-    padding: 10px;
+.cart-btn {
+    border-radius: 20px;
+    background-color: #007aff;
+    color: white;
+    font-weight: 500;
+    margin-left: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Scrollable Product Section */
-.product-scroll {
-    display: flex;
-    overflow-x: scroll;
-    gap: 15px;
-    margin-top: 20px;
+.cart-btn:hover {
+    background-color: #0056b3;
 }
 
-.product-card {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    width: 200px;
-    text-align: center;
+.cart-btn:active {
+    transform: scale(0.95);
 }
 
-.product-card img {
-    width: 100%;
-    height: auto;
-}
-
-.product-description {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #333;
+/* Carousel Styling */
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
 }
 
 /* New Arrivals Section */
 .new-arrivals {
-    background-color: #f0f0f0;
+    margin-top: 50px;
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-snap-type: x mandatory; /* Enables smooth scrolling between items */
 }
 
-.new-arrivals .product-card {
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-}
-
-.new-arrivals .product-card img {
-    width: 100%;
-    height: auto;
-}
-
-.new-arrivals .product-description {
-    font-size: 1rem;
+.new-arrivals h2 {
+    font-size: 2rem;
+    font-weight: 600;
     color: #333;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-/* Responsive adjustments */
+.new-arrivals .card {
+    flex: 0 0 auto;
+    width: 250px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.new-arrivals .card:last-child {
+    margin-right: 50%; /* This ensures the last card is partially visible */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
+.btn {
+    background-color: #007aff;
+    color: white;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Modal Styling */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.cart-modal.open {
+    display: block;
+}
+
+.cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-modal-content h2 {
+    text-align: center;
+}
+
+.cart-items-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.cart-items-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-items-list button {
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart-items-list button:hover {
+    background-color: darkred;
+}
+
+.clear-cart {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.clear-cart:hover {
+    background-color: #0056b3;
+}
+
+.cart-modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
-    .new-arrivals .col-md-3 {
-        flex: 0 0 48%;
-        max-width: 48%;
+    .navbar .form-control {
+        width: 100%;
     }
-}
 
-@media (max-width: 576px) {
-    .new-arrivals .col-md-3 {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .navbar-nav .nav-item {
+        margin-right: 10px;
+    }
+
+    .cart-modal-content {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .new-arrivals .card {
+        margin-bottom: 20px;
     }
 }
